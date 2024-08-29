@@ -11,7 +11,7 @@ function App() {
    <>
    {/*Chama os componentes, para que ele apareça na tela principal*/}
    <Header/>
-   <Form/>   
+   <Form titulo="Cadastro de ADM" subTitulo="Garanta que todos os campos estejam preenchidos"/>   
    <Rodape/>
    </>
   )
