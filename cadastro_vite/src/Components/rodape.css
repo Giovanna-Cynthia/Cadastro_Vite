@@ -1,0 +1,23 @@
+.rodape{
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: #007bffd2;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    
+    position: fixed;
+    bottom: 0;        
+    width: 100%;     
+    z-index: 1000;
+}
+
+.rodape a:hover{
+    background-color: #008cff;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
