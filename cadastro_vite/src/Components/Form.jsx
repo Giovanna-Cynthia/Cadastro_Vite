@@ -21,13 +21,28 @@ const Form = () => {
 
     // Função para lidar com o envio do formulário
     const handleSubmit = (event) => {
-        event.preventDefault(); // Previne o comportamento padrão do formulário (recarregar a página)
-        console.log(formState.nome); // Exibe o valor do campo nome no console
-        console.log(formState.email); // Exibe o valor do campo email no console
-        console.log(formState.senha); // Exibe o valor do campo senha no console
-
-        setFormState(initilForm); // Reseta o estado do formulário
+        event.preventDefault();
+    
+        // Verifica se todos os campos estão preenchidos
+        if (!formState.nome || !formState.email || !formState.senha) {
+            alert('Todos os campos devem estar preenchidos.');
+            return;
+        }
+    
+        // Verifica se o nome contém apenas letras
+        const namePattern = /^[A-Za-zÀ-ÿ\s]+$/;
+        if (!namePattern.test(formState.nome)) {
+            alert('O nome deve conter apenas letras.');
+            return;
+        }
+    
+        // Exibe as informações no console em uma única linha
+        console.log(`Nome: ${formState.nome}, Email: ${formState.email}, Senha: ${formState.senha}`);
+    
+        // Reseta o estado do formulário
+        setFormState(initilForm);
     };
+    
 
    
     return (
@@ -37,7 +52,7 @@ const Form = () => {
                     
                     <div className="form-control">
                         <h2 className="h2Form">Cadastro de Administrador <hr/> </h2> 
-                        
+                            
                         <label htmlFor="nome"><i>Nome: </i></label>
                         <input
                             type="text" // Campo de entrada para texto
